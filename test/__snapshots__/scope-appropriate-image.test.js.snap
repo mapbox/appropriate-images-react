@@ -1,0 +1,119 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`scopeAppropriateImage background image with default options renders correctly 1`] = `
+<AppropriateImage
+  alt="A bear"
+  aria-hidden={true}
+  background={true}
+  backgroundPosition="center center"
+  backgroundSize="cover"
+  imageId="bear"
+  width={300}
+>
+  <div
+    style={
+      Object {
+        "backgroundImage": "url(\\"the-right-url\\")",
+        "backgroundPosition": "center center",
+        "backgroundRepeat": "no-repeat",
+        "backgroundSize": "cover",
+        "bottom": 0,
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+      }
+    }
+  />
+</AppropriateImage>
+`;
+
+exports[`scopeAppropriateImage background image with non-defaults renders correctly 1`] = `
+<AppropriateImage
+  alt="A bear"
+  aria-hidden={true}
+  background={true}
+  backgroundPosition="top left"
+  backgroundSize="contain"
+  imageId="bear"
+  style={
+    Object {
+      "maxHeight": 500,
+    }
+  }
+  width={300}
+>
+  <div
+    style={
+      Object {
+        "backgroundImage": "url(\\"the-right-url\\")",
+        "backgroundPosition": "top left",
+        "backgroundRepeat": "no-repeat",
+        "backgroundSize": "contain",
+        "bottom": 0,
+        "left": 0,
+        "maxHeight": 500,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+      }
+    }
+  />
+</AppropriateImage>
+`;
+
+exports[`scopeAppropriateImage defaults render correctly 1`] = `
+<AppropriateImage
+  alt="A bear"
+  aria-hidden={true}
+  background={false}
+  backgroundPosition="center center"
+  backgroundSize="cover"
+  imageId="bear"
+  style={
+    Object {
+      "maxWidth": "100%",
+    }
+  }
+  width={300}
+>
+  <img
+    alt="A bear"
+    aria-hidden={true}
+    src="the-right-url"
+    style={
+      Object {
+        "maxWidth": "100%",
+      }
+    }
+  />
+</AppropriateImage>
+`;
+
+exports[`scopeAppropriateImage non-background image with non-default options renders correctly 1`] = `
+<AppropriateImage
+  alt="A bear"
+  aria-hidden={true}
+  background={false}
+  backgroundPosition="center center"
+  backgroundSize="cover"
+  imageId="bear"
+  style={
+    Object {
+      "maxWidth": "100%",
+    }
+  }
+  width={300}
+>
+  <img
+    alt="A bear"
+    aria-hidden={true}
+    src="/path/to/images/the-right-url"
+    style={
+      Object {
+        "maxWidth": "100%",
+      }
+    }
+  />
+</AppropriateImage>
+`;
