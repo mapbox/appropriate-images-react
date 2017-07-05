@@ -1,5 +1,7 @@
 # @mapbox/appropriate-images-react
 
+[![Build Status](https://travis-ci.org/mapbox/appropriate-images-react.svg?branch=master)](https://travis-ci.org/mapbox/appropriate-images-react)
+
 🚧🚧 **EXPERIMENTAL! WORK IN PROGRESS!** 🚧🚧
 
 **Use in combination with [appropriate-images].**
