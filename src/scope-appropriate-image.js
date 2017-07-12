@@ -1,9 +1,7 @@
-'use strict';
-
-const React = require('react');
-const PropTypes = require('prop-types');
-const survey = require('@mapbox/react-simple-surveyor');
-const getAppropriateImageUrl = require('@mapbox/appropriate-images-get-url');
+import React from 'react';
+import PropTypes from 'prop-types';
+import survey from '@mapbox/react-simple-surveyor';
+import getAppropriateImageUrl from '@mapbox/appropriate-images-get-url';
 
 function scopeAppropriateImage(imageConfig, options) {
   options = options || {};
@@ -79,4 +77,4 @@ function scopeAppropriateImage(imageConfig, options) {
   return survey(AppropriateImage);
 }
 
-module.exports = scopeAppropriateImage;
+export { scopeAppropriateImage };

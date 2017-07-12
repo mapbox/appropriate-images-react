@@ -1,7 +1,8 @@
 'use strict';
 
 const React = require('react');
-const scopeAppropriateImage = require('../src/scope-appropriate-image');
+const scopeAppropriateImage = require('../src/scope-appropriate-image')
+  .scopeAppropriateImage;
 const getAppropriateImageUrl = require('@mapbox/appropriate-images-get-url');
 const enzyme = require('enzyme');
 const enzymeToJson = require('enzyme-to-json');
