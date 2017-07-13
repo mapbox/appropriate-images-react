@@ -16,7 +16,7 @@ function scopeAppropriateImage(imageConfig, options) {
     render() {
       let url = getAppropriateImageUrl({
         imageId: this.props.imageId,
-        width: this.props.width,
+        availableWidth: this.props.width,
         imageConfig,
         hiResRatio
       });

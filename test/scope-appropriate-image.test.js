@@ -62,7 +62,7 @@ describe('scopeAppropriateImage', () => {
     expect(getAppropriateImageUrl).toHaveBeenCalledTimes(1);
     expect(getAppropriateImageUrl).toHaveBeenCalledWith({
       imageId: 'bear',
-      width: 300,
+      availableWidth: 300,
       imageConfig,
       hiResRatio: 1.3
     });
@@ -94,7 +94,7 @@ describe('scopeAppropriateImage', () => {
     expect(getAppropriateImageUrl).toHaveBeenCalledTimes(1);
     expect(getAppropriateImageUrl).toHaveBeenCalledWith({
       imageId: 'osprey',
-      width: 450,
+      availableWidth: 450,
       imageConfig,
       hiResRatio: 1.5
     });
