@@ -19,7 +19,9 @@ This module does that. It
 
 ## API
 
-### scopeAppropriateImage(imageConfig, [options])
+### scopeAppropriateImage
+
+`appropriateImagesReact.scopeAppropriateImage(imageConfig, [options])`
 
 Returns an [AppropriateImage component](#appropriateimage) scoped according to your [appropriate-images configuration] and options.
 
