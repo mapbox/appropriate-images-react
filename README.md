@@ -2,20 +2,20 @@
 
 [![Build Status](https://travis-ci.org/mapbox/appropriate-images-react.svg?branch=master)](https://travis-ci.org/mapbox/appropriate-images-react)
 
-🚧🚧 **EXPERIMENTAL! WORK IN PROGRESS!** 🚧🚧
-
 **Use in combination with [appropriate-images].**
 
 After you've generated resized, optimized images with [appropriate-images], you'll want to use them in the browser.
 If you like React, you'll want to use them with React.
-You'll need to determine *which variant* of the image to load — that is, which size, and whether to load `.webp` or not.
-This module does that. It
+You'll need to determine *which variant* of the image to load — that is, which size, and whether to load the `.webp` version or not.
+This module does that.
 
-- measures the element's available width with [react-simple-surveyor](https://github.com/mapbox/react-simple-surveyor);
-- combines that width with your [appropriate-images configuration] to get a URL, using [appropriate-images-get-url];
-- then renders the appropriate variant of the image.
+Here are the steps it takes.
 
-(If you aren't using React but want to do something similar, check out [appropriate-images-get-url](https://github.com/mapbox/appropriate-images-get-url)).
+- Measures the element's available width with [react-simple-surveyor](https://github.com/mapbox/react-simple-surveyor);
+- Combines that width with your [appropriate-images configuration] to get a URL, using [appropriate-images-get-url];
+- Then renders the appropriate variant of the image.
+
+(If you aren't using React but want to use your [appropriate-images] in the browser, check out [appropriate-images-get-url](https://github.com/mapbox/appropriate-images-get-url)).
 
 ## API
 
@@ -37,11 +37,11 @@ Your [appropriate-images configuration].
 
 ##### transformUrl
 
-Type: `Function`.
+Type: `(originalUrl: string) => string`.
 Default: `x => x`.
 
 If you want to transform the URL in some way, use this function.
-One use-case is to take advantage of Webpack's augmented `require()` to get the URL *that Webpack creates* — if, for example, you're adding a hash to the end of files loaded with the file-loader.
+One use-case is to take advantage of Webpack's augmented `require()` to get the URL *that Webpack creates* — if, for example, you're adding a hash to the end of files loaded with [Webpack's file-loader](https://github.com/webpack-contrib/file-loader).
 
 For example:
 
@@ -71,7 +71,7 @@ It can render your image in two ways:
 
 #### props
 
-**All additional props are applied directly to the rendered element** (e.g. `alt`, `id`, `data-*`, `aria-*`).
+All props you pass other than those documented below are applied directly to the rendered element (e.g. `alt`, `id`, `data-*`, `aria-*`).
 
 ##### imageId
 
