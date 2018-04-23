@@ -1,11 +1,10 @@
 'use strict';
 
-const React = require('react');
-const scopeAppropriateImage = require('../src/scope-appropriate-image')
-  .scopeAppropriateImage;
-const getAppropriateImageUrl = require('@mapbox/appropriate-images-get-url');
-const enzyme = require('enzyme');
-const enzymeToJson = require('enzyme-to-json');
+import React from 'react';
+import { scopeAppropriateImage } from '../src';
+import getAppropriateImageUrl from '@mapbox/appropriate-images-get-url';
+import { mount } from 'enzyme';
+import { mountToJson } from 'enzyme-to-json';
 
 jest.mock('@mapbox/appropriate-images-get-url', () => {
   return jest.fn(() => 'the-right-url');
@@ -43,7 +42,7 @@ describe('scopeAppropriateImage', () => {
     // WrappedComponent so we aren't testing /react-simple-surveyor
     const AppropriateImage = scopeAppropriateImage(imageConfig)
       .WrappedComponent;
-    const enzymeWrapper = enzyme.mount(
+    const enzymeWrapper = mount(
       <AppropriateImage
         imageId="bear"
         width={300}
@@ -52,13 +51,13 @@ describe('scopeAppropriateImage', () => {
         aria-hidden={true}
       />
     );
-    expect(enzymeToJson.mountToJson(enzymeWrapper)).toMatchSnapshot();
+    expect(mountToJson(enzymeWrapper)).toMatchSnapshot();
   });
 
   test('defaults call getAppropriateImageUrl correctly', () => {
     const AppropriateImage = scopeAppropriateImage(imageConfig)
       .WrappedComponent;
-    enzyme.mount(<AppropriateImage imageId="bear" width={300} />);
+    mount(<AppropriateImage imageId="bear" width={300} />);
     expect(getAppropriateImageUrl).toHaveBeenCalledTimes(1);
     expect(getAppropriateImageUrl).toHaveBeenCalledWith({
       imageId: 'bear',
@@ -73,7 +72,7 @@ describe('scopeAppropriateImage', () => {
       hiResRatio: 1.5,
       transformUrl: x => `/path/to/images/${x}`
     }).WrappedComponent;
-    const enzymeWrapper = enzyme.mount(
+    const enzymeWrapper = mount(
       <AppropriateImage
         imageId="bear"
         width={300}
@@ -82,7 +81,7 @@ describe('scopeAppropriateImage', () => {
         aria-hidden={true}
       />
     );
-    expect(enzymeToJson.mountToJson(enzymeWrapper)).toMatchSnapshot();
+    expect(mountToJson(enzymeWrapper)).toMatchSnapshot();
   });
 
   test('non-background image with non-default options calls getAppropriateImageUrl correctly', () => {
@@ -90,7 +89,7 @@ describe('scopeAppropriateImage', () => {
       hiResRatio: 1.5,
       transformUrl: x => `/path/to/images/${x}`
     }).WrappedComponent;
-    enzyme.mount(<AppropriateImage imageId="osprey" width={450} />);
+    mount(<AppropriateImage imageId="osprey" width={450} />);
     expect(getAppropriateImageUrl).toHaveBeenCalledTimes(1);
     expect(getAppropriateImageUrl).toHaveBeenCalledWith({
       imageId: 'osprey',
@@ -103,7 +102,7 @@ describe('scopeAppropriateImage', () => {
   test('background image with default options renders correctly', () => {
     const AppropriateImage = scopeAppropriateImage(imageConfig)
       .WrappedComponent;
-    const enzymeWrapper = enzyme.mount(
+    const enzymeWrapper = mount(
       <AppropriateImage
         imageId="bear"
         width={300}
@@ -112,13 +111,13 @@ describe('scopeAppropriateImage', () => {
         background={true}
       />
     );
-    expect(enzymeToJson.mountToJson(enzymeWrapper)).toMatchSnapshot();
+    expect(mountToJson(enzymeWrapper)).toMatchSnapshot();
   });
 
   test('background image with non-defaults renders correctly', () => {
     const AppropriateImage = scopeAppropriateImage(imageConfig)
       .WrappedComponent;
-    const enzymeWrapper = enzyme.mount(
+    const enzymeWrapper = mount(
       <AppropriateImage
         imageId="bear"
         width={300}
@@ -130,6 +129,6 @@ describe('scopeAppropriateImage', () => {
         backgroundSize="contain"
       />
     );
-    expect(enzymeToJson.mountToJson(enzymeWrapper)).toMatchSnapshot();
+    expect(mountToJson(enzymeWrapper)).toMatchSnapshot();
   });
 });

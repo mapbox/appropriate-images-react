@@ -21,7 +21,15 @@ Here are the steps it takes.
 
 ### scopeAppropriateImage
 
-`appropriateImagesReact.scopeAppropriateImage(imageConfig, [options])`
+`scopeAppropriateImage(imageConfig, [options])`
+
+A named import for ES2015 modules, or a property on the CommonJS module.
+
+```js
+import { scopeAppropriateImage } from '@mapbox/appropriate-images-react';
+// OR
+const scopeAppropriateImage = require('@mapbox/appropriate-images-react').scopeAppropriateImage;
+```
 
 Returns an [AppropriateImage component](#appropriateimage) scoped according to your [appropriate-images configuration] and options.
 
@@ -46,8 +54,8 @@ One use-case is to take advantage of Webpack's augmented `require()` to get the 
 For example:
 
 ```js
-const appropriateImagesReact = require('@mapbox/appropriate-images-react');
-const AppropriateImage = appropriateImagesReact.scopeAppropriateImage(myImageConfig, {
+import { scopeAppropriateImage } from '@mapbox/appropriate-images-react';
+const AppropriateImage = scopeAppropriateImage(myImageConfig, {
   transformUrl: url => require(`/my/image/directory/${url}`);
 });
 ```
