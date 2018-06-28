@@ -56,7 +56,7 @@ For example:
 ```js
 import { scopeAppropriateImage } from '@mapbox/appropriate-images-react';
 const AppropriateImage = scopeAppropriateImage(myImageConfig, {
-  transformUrl: url => require(`/my/image/directory/${url}`);
+  transformUrl: url => require(`/my/image/directory/${url}`)
 });
 ```
 
@@ -117,17 +117,17 @@ Any `background-size` value will do.
 
 ```js
 const React = require('react');
-const appropriateImagesReact = require('@mapbox/appropriate-images-react');
+const { scopeAppropriateImage } = require('@mapbox/appropriate-images-react');
 const imageConfig = require('./path/to/my/image-config.js');
 
-const AppropriateImage = appropriateImagesReact(imageConfig);
+const AppropriateImage = scopeAppropriateImage(imageConfig);
 
 class MyPage extends React.PureComponent {
   render() {
     return (
       <div>
         <p>An appropriate image will be loaded below:</p>
-        <AppropriateImage name="bear" style={{ maxWidth: '100%' }}/>
+        <AppropriateImage imageId="bear" style={{ maxWidth: '100%' }}/>
       </div>
     );
   }
