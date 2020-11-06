@@ -5,12 +5,10 @@ import getAppropriateImageUrl from '@mapbox/appropriate-images-get-url';
 
 function scopeAppropriateImage(imageConfig, options) {
   options = options || {};
-  const transformUrl = options.transformUrl !== undefined
-    ? options.transformUrl
-    : x => x;
-  const hiResRatio = options.hiResRatio !== undefined
-    ? options.hiResRatio
-    : 1.3;
+  const transformUrl =
+    options.transformUrl !== undefined ? options.transformUrl : (x) => x;
+  const hiResRatio =
+    options.hiResRatio !== undefined ? options.hiResRatio : 1.3;
 
   class AppropriateImage extends React.PureComponent {
     render() {
@@ -18,7 +16,7 @@ function scopeAppropriateImage(imageConfig, options) {
         imageId: this.props.imageId,
         availableWidth: this.props.width,
         imageConfig,
-        hiResRatio
+        hiResRatio,
       });
       url = transformUrl(url);
 
@@ -47,10 +45,10 @@ function scopeAppropriateImage(imageConfig, options) {
         top: 0,
         bottom: 0,
         left: 0,
-        right: 0
+        right: 0,
       };
       if (elementProps.style) {
-        Object.keys(elementProps.style).forEach(key => {
+        Object.keys(elementProps.style).forEach((key) => {
           backgroundStyle[key] = elementProps.style[key];
         });
         delete elementProps.style;
@@ -65,13 +63,13 @@ function scopeAppropriateImage(imageConfig, options) {
     backgroundPosition: PropTypes.string,
     backgroundSize: PropTypes.string,
     // Provided by survey
-    width: PropTypes.number.isRequired
+    width: PropTypes.number.isRequired,
   };
 
   AppropriateImage.defaultProps = {
     background: false,
     backgroundPosition: 'center center',
-    backgroundSize: 'cover'
+    backgroundSize: 'cover',
   };
 
   return survey(AppropriateImage);

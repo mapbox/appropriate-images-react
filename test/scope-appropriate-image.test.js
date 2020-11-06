@@ -3,8 +3,11 @@
 import React from 'react';
 import { scopeAppropriateImage } from '../src';
 import getAppropriateImageUrl from '@mapbox/appropriate-images-get-url';
-import { mount } from 'enzyme';
+import Enzyme, { mount } from 'enzyme';
 import { mountToJson } from 'enzyme-to-json';
+import Adapter from 'enzyme-adapter-react-15';
+
+Enzyme.configure({ adapter: new Adapter() });
 
 jest.mock('@mapbox/appropriate-images-get-url', () => {
   return jest.fn(() => 'the-right-url');
@@ -17,24 +20,24 @@ describe('scopeAppropriateImage', () => {
     imageConfig = {
       bear: {
         basename: 'bear.png',
-        sizes: [{ width: 600 }, { width: 1200 }]
+        sizes: [{ width: 600 }, { width: 1200 }],
       },
       montaraz: {
         basename: 'montaraz.jpg',
         sizes: [
           { width: 600, height: 500 },
           { width: 1200, crop: 'north' },
-          { width: 200, height: 200, crop: 'southeast' }
-        ]
+          { width: 200, height: 200, crop: 'southeast' },
+        ],
       },
       osprey: {
         basename: 'osprey.jpg',
-        sizes: [{ width: 1200 }, { width: 600, height: 600 }]
+        sizes: [{ width: 1200 }, { width: 600, height: 600 }],
       },
       walrus: {
         basename: 'walrus.png',
-        sizes: [{ width: 800 }]
-      }
+        sizes: [{ width: 800 }],
+      },
     };
   });
 
@@ -63,14 +66,14 @@ describe('scopeAppropriateImage', () => {
       imageId: 'bear',
       availableWidth: 300,
       imageConfig,
-      hiResRatio: 1.3
+      hiResRatio: 1.3,
     });
   });
 
   test('non-background image with non-default options renders correctly', () => {
     const AppropriateImage = scopeAppropriateImage(imageConfig, {
       hiResRatio: 1.5,
-      transformUrl: x => `/path/to/images/${x}`
+      transformUrl: (x) => `/path/to/images/${x}`,
     }).WrappedComponent;
     const enzymeWrapper = mount(
       <AppropriateImage
@@ -87,7 +90,7 @@ describe('scopeAppropriateImage', () => {
   test('non-background image with non-default options calls getAppropriateImageUrl correctly', () => {
     const AppropriateImage = scopeAppropriateImage(imageConfig, {
       hiResRatio: 1.5,
-      transformUrl: x => `/path/to/images/${x}`
+      transformUrl: (x) => `/path/to/images/${x}`,
     }).WrappedComponent;
     mount(<AppropriateImage imageId="osprey" width={450} />);
     expect(getAppropriateImageUrl).toHaveBeenCalledTimes(1);
@@ -95,7 +98,7 @@ describe('scopeAppropriateImage', () => {
       imageId: 'osprey',
       availableWidth: 450,
       imageConfig,
-      hiResRatio: 1.5
+      hiResRatio: 1.5,
     });
   });
 
