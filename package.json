@@ -1,6 +1,6 @@
 {
   "name": "@mapbox/appropriate-images-react",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Examples showing how to use the resized, optimized images that you generated with appropriate-images in React",
   "main": "dist/index.js",
   "files": [
