@@ -5,7 +5,7 @@ import { scopeAppropriateImage } from '../src';
 import getAppropriateImageUrl from '@mapbox/appropriate-images-get-url';
 import Enzyme, { mount } from 'enzyme';
 import { mountToJson } from 'enzyme-to-json';
-import Adapter from 'enzyme-adapter-react-15';
+import Adapter from 'enzyme-adapter-react-16';
 
 Enzyme.configure({ adapter: new Adapter() });
 

@@ -33,26 +33,26 @@
   },
   "homepage": "https://github.com/mapbox/appropriate-images-react#readme",
   "dependencies": {
-    "@mapbox/appropriate-images-get-url": "^0.1.1",
-    "@mapbox/react-simple-surveyor": "^0.1.1"
+    "@mapbox/appropriate-images-get-url": "^1.0.0",
+    "@mapbox/react-simple-surveyor": "^1.0.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.12.1",
-    "@babel/preset-env": "^7.12.1",
-    "@babel/preset-react": "^7.12.5",
+    "@babel/cli": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "@babel/preset-react": "^7.12.10",
     "enzyme": "^3.11.0",
-    "enzyme-adapter-react-15": "^1.4.2",
+    "enzyme-adapter-react-16": "^1.15.5",
     "enzyme-to-json": "^3.6.1",
-    "eslint": "^7.12.1",
+    "eslint": "^7.16.0",
     "eslint-plugin-react": "^7.21.5",
-    "husky": "^4.3.0",
+    "husky": "^4.3.6",
     "jest": "^26.6.3",
-    "lint-staged": "^10.5.1",
-    "prettier": "^2.1.2",
+    "lint-staged": "^10.5.3",
+    "prettier": "^2.2.1",
     "prop-types": "^15.7.2",
-    "react": "^15.7.0",
-    "react-dom": "^15.7.0",
-    "react-test-renderer": "^15.7.0"
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "react-test-renderer": "^16.14.0"
   },
   "lint-staged": {
     "**/*.js": [
