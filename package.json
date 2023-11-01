@@ -1,13 +1,12 @@
 {
   "name": "@mapbox/appropriate-images-react",
   "version": "2.2.0",
-  "description": "Examples showing how to use the resized, optimized images that you generated with appropriate-images in React",
+  "description": "Use images optimized with appropriate-images in React",
   "main": "dist/index.js",
   "files": [
     "dist"
   ],
   "scripts": {
-    "start": "webpack-dev-server",
     "format": "prettier --single-quote --write '{,src/**/}*.js'",
     "lint": "eslint .",
     "test-jest": "jest",
