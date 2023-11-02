@@ -1,6 +1,6 @@
 {
   "name": "@mapbox/appropriate-images-react",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "description": "Use images optimized with appropriate-images in React",
   "main": "dist/index.js",
   "files": [
