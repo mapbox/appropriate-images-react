@@ -12,8 +12,8 @@ exports[`scopeAppropriateImage background image with default options renders cor
 >
   <div
     style={
-      Object {
-        "backgroundImage": "url(\\"the-right-url\\")",
+      {
+        "backgroundImage": "url("the-right-url")",
         "backgroundPosition": "center center",
         "backgroundRepeat": "no-repeat",
         "backgroundSize": "cover",
@@ -37,7 +37,7 @@ exports[`scopeAppropriateImage background image with non-defaults renders correc
   backgroundSize="contain"
   imageId="bear"
   style={
-    Object {
+    {
       "maxHeight": 500,
     }
   }
@@ -45,8 +45,8 @@ exports[`scopeAppropriateImage background image with non-defaults renders correc
 >
   <div
     style={
-      Object {
-        "backgroundImage": "url(\\"the-right-url\\")",
+      {
+        "backgroundImage": "url("the-right-url")",
         "backgroundPosition": "top left",
         "backgroundRepeat": "no-repeat",
         "backgroundSize": "contain",
@@ -71,7 +71,7 @@ exports[`scopeAppropriateImage defaults render correctly 1`] = `
   backgroundSize="cover"
   imageId="bear"
   style={
-    Object {
+    {
       "maxWidth": "100%",
     }
   }
@@ -82,7 +82,7 @@ exports[`scopeAppropriateImage defaults render correctly 1`] = `
     aria-hidden={true}
     src="the-right-url"
     style={
-      Object {
+      {
         "maxWidth": "100%",
       }
     }
@@ -99,7 +99,7 @@ exports[`scopeAppropriateImage non-background image with non-default options ren
   backgroundSize="cover"
   imageId="bear"
   style={
-    Object {
+    {
       "maxWidth": "100%",
     }
   }
@@ -110,7 +110,7 @@ exports[`scopeAppropriateImage non-background image with non-default options ren
     aria-hidden={true}
     src="/path/to/images/the-right-url"
     style={
-      Object {
+      {
         "maxWidth": "100%",
       }
     }
